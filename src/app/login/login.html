@@ -1,7 +1,4 @@
 <div class="container">
-
-  <div ng-include="'components/navbar/navbar.html'"></div>
-
   <div class="jumbotron text-center">
     <p class="lead">
       This is awesome
@@ -23,7 +20,7 @@
               <div class="form-group">
                 <input class="form-control" placeholder="Password" name="password" type="password" value="" data-ng-model="password">
               </div>
-              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" data-ng-click="main.loginWithParse(username, password)">
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" data-ng-click="login.loginWithParse(username, password)">
             </fieldset>
           </form>
         </div>
