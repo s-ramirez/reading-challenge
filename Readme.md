@@ -1,7 +1,7 @@
 # Reading Challenge 2015
 
 ## Requirements
-1. Node.js (Installing with ![homebrew](http://thechangelog.com/install-node-js-with-homebrew-on-os-x/) recommended).
+1. Node.js (Installing with [homebrew](http://thechangelog.com/install-node-js-with-homebrew-on-os-x/) recommended).
 
 ## Installation
 
