@@ -2,18 +2,16 @@
 	<div class="row main-row">
 		<div class="col-md-8 fill">
 			<section class="information-container">
-				<div class="row">
-					<div class="col-md-3">
-						<img src="http://placehold.it/90x90" alt="avatar-img" class="img-circle">
-					</div>
-					<div class="col-md-9">
-						<h2>{{home.user.attributes.name}}</h2>
-						<p>10 books read</p>
-						<p>Currently reading: For Whom the Bells Tolls</p>
-					</div>
+				<div class="col-md-3 fill">
+					<img src="http://placehold.it/90x90" alt="avatar-img" class="img-circle img-responsive">
+				</div>
+				<div class="col-md-9 fill">
+					<h2>{{home.user.attributes.name}}</h2>
+					<p>10 books read</p>
+					<p>Currently reading: For Whom the Bells Tolls</p>
 				</div>
 				<div class="progress">
-					<div class="progress-bar" style="width: 60%;">
+					<div class="progress-bar" style="width: 70%;">
 						<span class="sr-only">60% Complete</span>
 					</div>
 				</div>
@@ -46,5 +44,9 @@
 		</div>
 	</div>
 	<div class="row users-row">
+		<div class="col-xs-1 col-md-1" ng-repeat="friend in home.friends | limitTo: 11">
+			<img ng-src="{{friend.picture}}">
+			<span>{{ friend.progress }}%</span>
+		</div>
 	</div>
 </div>

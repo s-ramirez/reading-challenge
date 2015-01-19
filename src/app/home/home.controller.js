@@ -9,6 +9,7 @@
 
 	function HomeCtrl($location, $window, $scope) {
 		var vm = this;
+		vm.friends = [];
 
 		activate();
 
@@ -18,6 +19,7 @@
 				$location.path("/login");
 			} else {
 				setContainerHeight();
+				getOtherUsers();
 			}
 		};
 
@@ -27,6 +29,15 @@
 
 			vm.containerHeight = (width >= 992) ? height - 70 + 'px' : 'auto';
 		};
+
+		function getOtherUsers() {
+			for(var i = 0; i < 15; i++) {
+					vm.friends.push({
+							progress: Math.floor(Math.random() * 100) + 1,
+							picture: 'http://placehold.it/80x80'
+						});
+				};
+		}
 
 		angular.element($window).bind("resize", function () {
 			setContainerHeight();

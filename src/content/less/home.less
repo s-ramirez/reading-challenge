@@ -1,29 +1,74 @@
 .main-content {
 	section {
 		background-color: @section-color;
-		padding: 24px;
+		padding: 20px;
 		position: relative;
 		box-shadow: none;
 	}
 
 	.progress {
 		position: absolute;
-		top: 90%;
-		width: 100%;
+		bottom: 0;
 		left: 0;
+		width: 100%;
+		overflow: hidden;
+		height: 6px;
+		background-color: @section-color;
+		border-radius: 0;
+		box-shadow: none;
+		margin-bottom: 0;
+	}
+
+	.progress-bar {
+		background-color: @progress-bar-color;
+		box-shadow: none;
 	}
 
 	.main-row {
 		height: 100%;
-		padding-bottom: 85px;
+		padding-bottom: 105px;
 	}
 
 	.information-container {
-		height: 27%;
+		height: 20%;
 		margin-bottom: 3%;
+
+		img {
+			height: 100%;
+		}
+
+		h2 {
+			margin-top: 0;
+			font-size: 16px;
+			font-weight: bold;
+			color: @header-color;
+		}
+
+		p {
+			margin-bottom: 2px;
+		}
 	}
 
 	.challenges-container {
 		height: 70%;
+	}
+
+	.users-row {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: 24px;
+
+		span {
+			position: absolute;
+			bottom: 5px;
+			right: 20px;
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+		}
+
+		img {
+			width: 100%;
+		}
 	}
 }
