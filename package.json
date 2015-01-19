@@ -39,9 +39,13 @@
     "chalk": "~0.5.1",
     "protractor": "~1.4.0",
     "uglify-save-license": "~0.4.1"
-    
+
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "scripts": {
+  	"start": "node app",
+  	"postinstall": "gulp default"
   }
 }
