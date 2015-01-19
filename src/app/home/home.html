@@ -17,9 +17,9 @@
 				</div>
 			</section>
 			<section class="challenges-container">
-				<ul class="nav nav-pills">
-					<li class="active"><a href="#">Completed</a></li>
-					<li><a href="#">Pending</a></li>
+				<ul class="nav nav-pills challenges-nav">
+					<li class="active">Completed</li>
+					<li>Pending</li>
 				</ul>
 				<div class="challenges-list">
 					<div class="challenge-row">
@@ -32,7 +32,8 @@
 		<div class="col-md-4 fill">
 			<section class="books-container fill">
 				<div class="books-header">
-					Read books
+					<b>Read books</b>
+					<span class="pull-right">16 books</span>
 				</div>
 				<div class="books-list">
 					<div class="books-row">
@@ -43,7 +44,7 @@
 			</section>
 		</div>
 	</div>
-	<div class="row users-row">
+	<div class="users-row">
 		<div class="col-xs-1 col-md-1" ng-repeat="friend in home.friends | limitTo: 11">
 			<img ng-src="{{friend.picture}}">
 			<span>{{ friend.progress }}%</span>

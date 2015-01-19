@@ -1,7 +1,6 @@
 .main-content {
 	section {
 		background-color: @section-color;
-		padding: 20px;
 		position: relative;
 		box-shadow: none;
 	}
@@ -26,10 +25,11 @@
 
 	.main-row {
 		height: 100%;
-		padding-bottom: 105px;
+		padding-bottom: 120px;
 	}
 
 	.information-container {
+		padding: 20px;
 		height: 20%;
 		margin-bottom: 3%;
 
@@ -39,7 +39,7 @@
 
 		h2 {
 			margin-top: 0;
-			font-size: 16px;
+			font-size: @lg-font-size;
 			font-weight: bold;
 			color: @header-color;
 		}
@@ -50,7 +50,7 @@
 	}
 
 	.challenges-container {
-		height: 70%;
+		height: 77%;
 	}
 
 	.users-row {
@@ -62,13 +62,79 @@
 			position: absolute;
 			bottom: 5px;
 			right: 20px;
-			font-size: 16px;
+			font-size: @lg-font-size;
 			font-weight: bold;
-			color: white;
+			color: @white;
 		}
 
 		img {
 			width: 100%;
+		}
+	}
+
+	.books-header {
+		padding: 16px 20px;
+		background-color: @books-header-color;
+		color: @white;
+		font-size: @lg-font-size;
+	}
+
+	.books-list {
+		.books-row{
+			padding: 20px;
+			border-bottom: 1px solid @gray-font-color;
+
+			&:last-child {
+				border: none;
+			}
+
+			h4 {
+				font-size: @sm-font-size;
+				margin-top: 0;
+			}
+
+			p {
+				color: @gray-font-color;
+			}
+		}
+	}
+
+	.challenges-nav {
+		border-bottom: 1px solid @challenges-border-color;
+		font-size: @lg-font-size;
+		text-align: center;
+
+		li {
+			color: @pickled-bluewood;
+			background: none;
+			cursor: pointer;
+			padding: 15px 15px 10px;
+			float: none;
+			display: inline-block;
+		}
+
+		.active {
+			color: @pickled-bluewood;
+			font-weight: bold;
+			border-bottom: 2px solid @challenges-border-color;
+		}
+	}
+
+	.challenge-row {
+		padding: 15px 20px;
+		border-bottom: 1px solid @gray-font-color;
+
+		&:last-child {
+			border: none;
+		}
+
+		h4 {
+			margin-top: 0;
+			font-size: @sm-font-size;
+		}
+
+		p {
+			color: @gray-font-color;
 		}
 	}
 }

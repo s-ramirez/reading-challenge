@@ -33,9 +33,9 @@
 		function getOtherUsers() {
 			for(var i = 0; i < 15; i++) {
 					vm.friends.push({
-							progress: Math.floor(Math.random() * 100) + 1,
-							picture: 'http://placehold.it/80x80'
-						});
+						progress: Math.floor(Math.random() * 100) + 1,
+						picture: 'http://placehold.it/80x80'
+					});
 				};
 		}
 
