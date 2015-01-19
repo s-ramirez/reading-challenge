@@ -12,7 +12,7 @@
 
 		vm.loginWithParse = function (username, password) {
 			Parse.User.logIn(username, password, {}).then(function(res){
-				$location.url('/');
+				$location.path('/');
 			}, function(reason) {
 				console.log('Failed because: ' + reason);
 			});
