@@ -6,8 +6,8 @@
 					<img src="http://placehold.it/90x90" alt="avatar-img" class="img-circle img-responsive">
 				</div>
 				<div class="col-md-9 fill">
-					<h2>{{home.user.attributes.name}}</h2>
-					<p>{{home.books.read.length}} books read</p>
+					<h2>{{ home.user.attributes.name }}</h2>
+					<p>{{ home.books.read.length }} books read</p>
 					<p ng-if="home.books.reading.length">Currently reading:
 						<span ng-repeat="item in home.books.reading">{{item.title}} - {{item.author}}{{$last ? '' : ' | '}}</span>
 					</p>
@@ -19,13 +19,13 @@
 				</div>
 			</section>
 			<section class="challenges-container">
-				<ul class="nav nav-pills challenges-nav">
-					<li class="active">Completed</li>
-					<li>Pending</li>
+				<ul class="nav nav-pills challenges-nav" ng-init="completed = true">
+					<li ng-class="{ 'active': completed }" ng-click="completed = true">Completed</li>
+					<li ng-class="{ 'active': !completed }" ng-click="completed = false">Pending</li>
 				</ul>
 				<div class="challenges-list">
-					<div class="challenge-row">
-						<h4>A book from an author you love</h4>
+					<div class="challenge-row" ng-repeat="challenge in home.challenges | filter:challenge.completed:completed">
+						<h4>{{challenge.description}}</h4>
 						<p>3 days ago</p>
 					</div>
 				</div>

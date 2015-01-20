@@ -24,6 +24,7 @@
 				setContainerHeight();
 				getOtherUsers();
 				getUserBooks();
+				getUserChallenges();
 			}
 		};
 
@@ -47,7 +48,13 @@
 			parseService.getUserBooks(vm.user).then(function (results) {
 				vm.books = results;
 			});
-		}
+		};
+
+		function getUserChallenges() {
+			parseService.getUserChallenges(vm.user).then(function (results){
+				vm.challenges = results;
+			});
+		};
 
 		angular.element($window).bind("resize", function () {
 			setContainerHeight();
