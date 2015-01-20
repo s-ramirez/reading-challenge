@@ -5,21 +5,25 @@
 		.module('readingChallenge')
 		.controller('HomeCtrl', HomeCtrl);
 
-	HomeCtrl.$inject = ["$location", "$window", "$scope"];
+	HomeCtrl.$inject = ["$location", "$window", "$scope", "parseService"];
 
-	function HomeCtrl($location, $window, $scope) {
+	function HomeCtrl($location, $window, $scope, parseService) {
 		var vm = this;
+
 		vm.friends = [];
+		vm.books = [];
+		vm.challenges = [];
 
 		activate();
 
 		function activate() {
-			vm.user = Parse.User.current();
+			vm.user = parseService.getCurrentUser();
 			if(!vm.user){
 				$location.path("/login");
 			} else {
 				setContainerHeight();
 				getOtherUsers();
+				getUserBooks();
 			}
 		};
 
@@ -31,12 +35,18 @@
 		};
 
 		function getOtherUsers() {
-			for(var i = 0; i < 15; i++) {
-					vm.friends.push({
-						progress: Math.floor(Math.random() * 100) + 1,
-						picture: 'http://placehold.it/80x80'
-					});
-				};
+			for (var i = 0; i < 15; i++) {
+				vm.friends.push({
+					progress: Math.floor(Math.random() * 100) + 1,
+					picture: 'http://placehold.it/80x80'
+				});
+			};
+		};
+
+		function getUserBooks() {
+			parseService.getUserBooks(vm.user).then(function (results) {
+				vm.books = results;
+			});
 		}
 
 		angular.element($window).bind("resize", function () {

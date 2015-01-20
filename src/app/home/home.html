@@ -7,8 +7,10 @@
 				</div>
 				<div class="col-md-9 fill">
 					<h2>{{home.user.attributes.name}}</h2>
-					<p>10 books read</p>
-					<p>Currently reading: For Whom the Bells Tolls</p>
+					<p>{{home.books.read.length}} books read</p>
+					<p ng-if="home.books.reading.length">Currently reading:
+						<span ng-repeat="item in home.books.reading">{{item.title}} - {{item.author}}{{$last ? '' : ' | '}}</span>
+					</p>
 				</div>
 				<div class="progress">
 					<div class="progress-bar" style="width: 70%;">
@@ -33,12 +35,15 @@
 			<section class="books-container fill">
 				<div class="books-header">
 					<b>Read books</b>
-					<span class="pull-right">16 books</span>
+					<span class="pull-right">{{ home.books.read.length }} books</span>
 				</div>
 				<div class="books-list">
-					<div class="books-row">
-						<h4>The Hobbit</h4>
-						<p>A book from an author</p>
+					<div class="books-row" ng-repeat="item in home.books.read" ng-if="home.books.read.length">
+						<h4>{{ item.title }}</h4>
+						<p>{{ item.author }}</p>
+					</div>
+					<div class="books-row" ng-repeat="item in home.books.read" ng-if="!home.books.read.length">
+						<h4>You should start reading...</h4>
 					</div>
 				</div>
 			</section>
